@@ -1,24 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
-import { HttpClientModule } from '@angular/common/http';
-
-import { MarkdownModule } from "ngx-markdown";
-
-import { RouterModule, Routes } from "@angular/router";
-
-import { NavComponent } from "./nav/nav.component";
-import { ArticlesComponent } from "./articles/articles.component";
-import { ArticleComponent } from "./article/article.component";
-import { CategoryComponent } from "./category/category.component";
+import { NavComponent } from './nav/nav.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { ArticleComponent } from './article/article.component';
+import { CategoryComponent } from './category/category.component';
+import { MeetingsComponent } from './meetings/meetings.component';
 
 const appRoutes: Routes = [
-  { path: "", component: ArticlesComponent },
-  { path: "article/:id", component: ArticleComponent },
-  { path: "category/:id", component: CategoryComponent }
+  { path: '', component: MeetingsComponent },
+  { path: 'article/:id', component: ArticleComponent },
+  { path: 'category/:id', component: CategoryComponent },
+  // { path: 'city/:id', component: CityComponent },
 ];
 
 @NgModule({
@@ -27,11 +26,12 @@ const appRoutes: Routes = [
     NavComponent,
     ArticlesComponent,
     ArticleComponent,
-    CategoryComponent
+    CategoryComponent,
+    MeetingsComponent
   ],
   imports: [
     MarkdownModule.forRoot(),
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
