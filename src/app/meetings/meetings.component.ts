@@ -10,11 +10,11 @@ import MEETINGS_QUERY from '../apollo/queries/meeting/meetings';
   styleUrls: ['./meetings.component.css']
 })
 export class MeetingsComponent implements OnInit, OnDestroy {
-  data: any = {};
-  loading = true;
-  errors: any;
-  pastMeetings: any[];
-  futureMeetings: any[];
+
+  public data: any = {};
+  public loading = true;
+  public pastMeetings: any[];
+  public futureMeetings: any[];
 
   private eventsQuery: Subscription;
 
@@ -22,16 +22,13 @@ export class MeetingsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.eventsQuery = this.apollo
-      .watchQuery({
-        query: MEETINGS_QUERY
-      })
+      .watchQuery({ query: MEETINGS_QUERY })
       .valueChanges.subscribe((result: any) => {
         console.log('meetings: ', result);
         this.data = result.data.meetings;
         this.pastMeetings = this.data.filter(meeting => meeting.date > new Date().toISOString());
         this.futureMeetings = this.data.filter(meeting => meeting.date < new Date().toISOString());
         this.loading = result.loading;
-        this.errors = result.errors;
       });
   }
 
