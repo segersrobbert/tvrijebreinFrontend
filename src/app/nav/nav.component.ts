@@ -24,7 +24,6 @@ export class NavComponent implements OnInit, OnDestroy {
         query: CITIES_QUERY
       })
       .valueChanges.subscribe(result => {
-        console.log('result: ', result);
         this.data = result.data;
         this.loading = result.loading;
         this.errors = result.errors;

@@ -3,64 +3,81 @@
     <h1>Meetings</h1>
 
     <div class="uk-child-width-1-2" uk-grid>
+
       <div>
-        <a
-          routerLink="/meeting/{{ event.id }}"
-          routerLinkActive="active"
-          *ngFor="let event of event"
-          class="uk-link-reset"
-        >
+        <h2>Toekomstige</h2>
+        <a  routerLink="/meeting/{{ meeting.id }}"
+            routerLinkActive="active"
+            *ngFor="let meeting of pastMeetings"
+            class="uk-link-reset">
+
           <div class="uk-card uk-card-muted">
-            <div *ngIf="event.image" class="uk-card-media-top">
-              <img
-                src="http://localhost:1337{{ event.image.url }}"
-                alt=""
-                height="100"
-              />
+            <div *ngIf="meeting.image" class="uk-card-media-top">
+              <img  src="http://localhost:1337{{ meeting.image.url }}"
+                    alt=""
+                    height="100"/>
             </div>
             <div class="uk-card-body">
-              <p
-                id="category"
-                *ngIf="event.category"
-                class="uk-text-uppercase"
-              >
-                {{ event.category.name }}
+              <h3 *ngIf="meeting.name">
+                {{ meeting.name }}
+              </h3>
+              <!-- <p class="uk-text-large">
+                {{ meeting.description }}
+              </p> -->
+              <p class="uk-text-large">
+                {{ meeting.date | date: 'dd/MM/yyyy' }}
               </p>
-              <p id="title" class="uk-text-large">{{ event.title }}</p>
+              <p class="uk-text-large">
+                {{ meeting.speaker }}
+              </p>
+              <p class="uk-text-large">
+                {{ meeting.location }}
+              </p>
+
             </div>
           </div>
+
         </a>
       </div>
+
       <div>
-        <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
-          <a
-            routerLink="/event/{{ event.id }}"
+        <h2>Vorige</h2>
+        <a  routerLink="/meeting/{{ meeting.id }}"
             routerLinkActive="active"
-            *ngFor="let event of events"
-            class="uk-link-reset"
-          >
-            <div class="uk-card uk-card-muted">
-              <div *ngIf="event.image" class="uk-card-media-top">
-                <img
-                  src="http://localhost:1337{{ event.image.url }}"
-                  alt=""
-                  height="100"
-                />
-              </div>
-              <div class="uk-card-body">
-                <p
-                  id="category"
-                  *ngIf="event.category"
-                  class="uk-text-uppercase"
-                >
-                  {{ event.category.name }}
-                </p>
-                <p id="title" class="uk-text-large">{{ event.title }}</p>
-              </div>
+            *ngFor="let meeting of futureMeetings"
+            class="uk-link-reset">
+
+          <div class="uk-card uk-card-muted">
+            <div *ngIf="meeting.image" class="uk-card-media-top">
+              <img  src="http://localhost:1337{{ meeting.image.url }}"
+                    alt=""
+                    height="100"/>
             </div>
-          </a>
-        </div>
+            <div class="uk-card-body">
+              <h3 *ngIf="meeting.name">
+                {{ meeting.name }}
+              </h3>
+              <!-- <p class="uk-text-large">
+                {{ meeting.description }}
+              </p> -->
+              <p class="uk-text-large">
+                Datum: {{ meeting.date | date: 'dd/MM/yyyy hh' }}
+              </p>
+              <p class="uk-text-large">
+                Spreker: {{ meeting.speaker }}
+              </p>
+              <p class="uk-text-large">
+                Locatie: {{ meeting.location }}
+              </p>
+
+            </div>
+          </div>
+
+        </a>
       </div>
+
     </div>
+
+    
   </div>
 </div>
