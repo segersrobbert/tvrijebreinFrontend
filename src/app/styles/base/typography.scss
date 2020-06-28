@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta+Malar|Open+Sans');
+@import 'abstracts/variables.scss';
+
+$font-main: 'Open Sans', sans-serif;
+$font-sub: 'Mukta Malar', sans-serif;
+
+$text-main: 16px/24px $font-main;
+$text-title-main: 45px/48px $font-sub;
+
+
+.white { color: $primary-white; }
+.text-center { text-align: center; }
+
+h1 {
+  font-size: 32px;
+  font-family: $font-main;
+}
+h2 {
+  font-size: 28px;
+  font-family: $font-main;
+}
+h3 {
+  font-size: 24px;
+  font-family: $font-sub;
+}
+
+a {
+  text-decoration: none;
+}
+
+// FONT SIZES
+@for $i from 1 through 48 {
+  @if ($i) % 2 == 0 {
+    .font-#{$i} { font-size: $i * 1px; }
+  }
+}

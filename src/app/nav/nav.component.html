@@ -1,21 +1,20 @@
-<nav class="uk-navbar-container" uk-navbar>
-  <div class="uk-navbar-left">
-    <ul class="uk-navbar-nav">
-      <li class="uk-active"><a href="#">'t Vrije Brein</a></li>
+<nav class="flex justify-between">
+
+  <div>
+    <ul>
+      <li class=""><a routerLink="/">'t Vrije Brein</a></li>
     </ul>
   </div>
 
-  <div class="uk-navbar-right">
-    <ul *ngIf="data" class="uk-navbar-nav">
-      <li *ngFor="let city of data.cities" class="uk-active">
-        <a
-          routerLink="/city/{{ city.id }}"
-          routerLinkActive="active"
-          class="uk-link-reset"
-        >
+  <div>
+    <ul *ngIf="data" class="flex">
+      <li *ngFor="let city of data.cities" class="">
+        <a  routerLink="/city/{{ city.id }}"
+            class="">
           {{ city.name }}
         </a>
       </li>
     </ul>
   </div>
+
 </nav>

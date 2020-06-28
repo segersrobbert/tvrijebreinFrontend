@@ -1,0 +1,40 @@
+@import 'src/app/styles/abstracts/variables.scss';
+
+header {
+  height: 40vh;
+  width: 100%;
+  background-color: black;
+  background-image: url('../../assets/img/candle.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.map-flanders {
+  background-image: url('../../assets/img/vlaanderen.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vh;
+}
+
+.map-city {
+  background-image: url('../../assets/img/kaars_inactief.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  &:hover {
+    background-image: url('../../assets/img/kaars_actief.png');
+  }
+}
+.antwerp {
+  bottom: -7%;
+  left: 55%;
+}
+.mechelen {
+  left: 51%;
+  bottom: -10%;
+}

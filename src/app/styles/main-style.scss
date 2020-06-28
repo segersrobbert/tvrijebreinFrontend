@@ -1,0 +1,20 @@
+@import 'base/reset.scss';
+@import 'abstracts/variables.scss';
+@import 'abstracts/mixins.scss';
+@import 'abstracts/utilities.scss';
+@import 'base/typography.scss';
+@import 'layout/layout.scss';
+@import 'themes/dark.scss';
+@import 'navigation.scss';
+
+body {
+  background-color: $primary-black;
+  color: $primary-white;
+  font-family: $font-main;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: $primary-white;
+}

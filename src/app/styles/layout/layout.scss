@@ -1,0 +1,93 @@
+@import 'abstracts/variables.scss';
+
+.flex { display: flex; }
+.column { flex-direction: column; }
+.justify-between { justify-content: space-between; }
+.justify-evenly { justify-content: space-evenly; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.items-left { align-items: left; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.self-end { align-self: flex-end; }
+
+.nomargin { margin: 0; }
+.marginauto { margin: auto; }
+.relative { position: relative; }
+
+.inline { display: inline; }
+.block { display: block; }
+
+// CONTAINERS
+.container-l { padding: $spacing-l; }
+.container-m { padding: $spacing-m; }
+.container-s { padding: $spacing-s; }
+
+// UTILITIES
+.height-full { height: 100%; }
+.width-full { width: 100%; }
+.width-half { width: 50%; }
+
+.invisible {
+  visibility: hidden;
+}
+
+// MARGINS
+$directions: top right bottom left;
+$sizes: s m l;
+@each $size in $sizes {
+
+  .margin-#{$size} {
+    @if ($size == 's') { padding: $spacing-s; }
+    @if ($size == 'm') { padding: $spacing-m; }
+    @if ($size == 'l') { padding: $spacing-l; }
+  }
+
+  @each $direction in $directions {
+    .margin-#{$direction}-#{$size} {
+      @if ($size == 's')  { margin-#{$direction}: $spacing-s; }
+      @if ($size == 'm')  { margin-#{$direction}: $spacing-m; }
+      @if ($size == 'l')  { margin-#{$direction}: $spacing-l; }
+    }
+  }
+
+}
+
+// PADDINGS
+$directions: top right bottom left;
+$sizes: s m l;
+@each $size in $sizes {
+
+  .padding-#{$size} {
+    @if ($size == 's') { padding: $spacing-s; }
+    @if ($size == 'm') { padding: $spacing-m; }
+    @if ($size == 'l') { padding: $spacing-l; }
+  }
+
+  @each $direction in $directions {
+    .padding-#{$direction}-#{$size} {
+      @if ($size == 's') { padding-#{$direction}: $spacing-s; }
+      @if ($size == 'm') { padding-#{$direction}: $spacing-m; }
+      @if ($size == 'l') { padding-#{$direction}: $spacing-l; }
+    }
+  }
+
+}
+
+// TOP CORRECTIONS
+@for $i from 1 through 100 {
+  @if ($i) % 5 == 0 {
+    .top-#{$i} { top: $i * 1%; }
+  }
+}
+
+.ruler {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bg-white {
+  background-color: $primary-white;
+}
