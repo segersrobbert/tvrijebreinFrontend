@@ -1,13 +1,19 @@
 @import 'src/app/styles/abstracts/variables.scss';
 
-header {
-  height: 40vh;
+.video-wrapper {
+  position: absolute;
   width: 100%;
-  background-color: black;
-  background-image: url('../../assets/img/candle.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+header {
+  height: 50vh;
+  width: 100%;
 }
 
 .map-flanders {

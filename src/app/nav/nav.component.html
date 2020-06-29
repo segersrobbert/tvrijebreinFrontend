@@ -1,8 +1,12 @@
-<nav class="flex justify-between">
+<nav class="container-m flex justify-between">
 
   <div>
     <ul>
-      <li class=""><a routerLink="/">'t Vrije Brein</a></li>
+      <li class="">
+        <a routerLink="/" class="padding-m">
+          't Vrije Brein
+        </a>
+      </li>
     </ul>
   </div>
 
@@ -10,7 +14,7 @@
     <ul *ngIf="data" class="flex">
       <li *ngFor="let city of data.cities" class="">
         <a  routerLink="/city/{{ city.id }}"
-            class="">
+            class="padding-m">
           {{ city.name }}
         </a>
       </li>

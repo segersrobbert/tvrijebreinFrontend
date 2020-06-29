@@ -74,10 +74,13 @@ $sizes: s m l;
 
 }
 
-// TOP CORRECTIONS
+// POSITION CORRECTIONS
 @for $i from 1 through 100 {
   @if ($i) % 5 == 0 {
     .top-#{$i} { top: $i * 1%; }
+    .bottom-#{$i} { bottom: $i * 1%; }
+    .right-#{$i} { right: $i * 1%; }
+    .left-#{$i} { left: $i * 1%; }
   }
 }
 
