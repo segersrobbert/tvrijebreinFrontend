@@ -12,16 +12,22 @@ $text-title-main: 45px/48px $font-sub;
 .text-center { text-align: center; }
 
 h1 {
-  font-size: 32px;
   font-family: $font-main;
+  font-size: 2rem;
+  line-height: 150%;
+  @include screen-m { font-size: 3rem; }
 }
 h2 {
-  font-size: 28px;
   font-family: $font-main;
+  font-size: 1.75rem;
+  line-height: 150%;
+  @include screen-m { font-size: 2.5rem; }
 }
 h3 {
-  font-size: 24px;
   font-family: $font-sub;
+  font-size: 1.5rem;
+  line-height: 150%;
+  @include screen-m { font-size: 2rem; }
 }
 
 a {

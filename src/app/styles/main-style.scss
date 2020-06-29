@@ -11,9 +11,16 @@ body {
   background-color: $primary-black;
   color: $primary-white;
   font-family: $font-main;
-  font-size: 18px;
   height: 100%;
   width: 100%;
+  font-size: 14px;
+  line-height: 150%;
+  @include screen-m {
+    font-size: 16px;
+  }
+  @include screen-l {
+    font-size: 18px;
+  }
 }
 
 a {

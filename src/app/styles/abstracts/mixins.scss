@@ -1,0 +1,22 @@
+$screen-xs: 480px;
+$screen-s: 640px;
+$screen-m: 768px;
+$screen-l: 1024px;
+$screen-xl: 1200px;
+
+// media query mixins
+@mixin screen-xs {
+  @media (min-width: #{$screen-xs}) { @content; }
+}
+@mixin screen-s {
+  @media (min-width: #{$screen-s}) { @content; }
+}
+@mixin screen-m {
+  @media (min-width: #{$screen-m}) { @content; }
+}
+@mixin screen-l {
+  @media (min-width: #{$screen-l}) { @content; }
+}
+@mixin screen-xl {
+  @media (min-width: #{$screen-xl}) { @content; }
+}
