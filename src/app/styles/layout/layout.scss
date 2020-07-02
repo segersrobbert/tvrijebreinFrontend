@@ -34,13 +34,14 @@
 
 // MARGINS
 $directions: top right bottom left;
-$sizes: s m l;
+$sizes: s m l xl;
 @each $size in $sizes {
 
   .margin-#{$size} {
     @if ($size == 's') { padding: $spacing-s; }
     @if ($size == 'm') { padding: $spacing-m; }
     @if ($size == 'l') { padding: $spacing-l; }
+    @if ($size == 'xl') { padding: $spacing-xl; }
   }
 
   @each $direction in $directions {
@@ -48,6 +49,10 @@ $sizes: s m l;
       @if ($size == 's')  { margin-#{$direction}: $spacing-s; }
       @if ($size == 'm')  { margin-#{$direction}: $spacing-m; }
       @if ($size == 'l')  { margin-#{$direction}: $spacing-l; }
+      @if ($size == 'xl')  {
+        margin-#{$direction}: $spacing-l;
+        @include screen-m { margin-#{$direction}: $spacing-xl; }
+      }
     }
   }
 

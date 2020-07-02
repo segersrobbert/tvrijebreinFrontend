@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Mukta+Malar|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Pangolin|Amatic+SC:wght@700');
 @import 'abstracts/variables.scss';
 
-$font-main: 'Open Sans', sans-serif;
-$font-sub: 'Mukta Malar', sans-serif;
+$font-main: 'Amatic SC', sans-serif;
+$font-sub: 'Neucha', sans-serif;
 
 $text-main: 16px/24px $font-main;
 $text-title-main: 45px/48px $font-sub;
@@ -13,9 +13,9 @@ $text-title-main: 45px/48px $font-sub;
 
 h1 {
   font-family: $font-main;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 150%;
-  @include screen-m { font-size: 3rem; }
+  @include screen-m { font-size: 4rem; }
 }
 h2 {
   font-family: $font-main;
@@ -29,9 +29,13 @@ h3 {
   line-height: 150%;
   @include screen-m { font-size: 2rem; }
 }
-
+p {
+  font-family: $font-sub;
+}
 a {
+  color: white !important;
   text-decoration: none;
+  font-size: 150%;
 }
 
 // FONT SIZES

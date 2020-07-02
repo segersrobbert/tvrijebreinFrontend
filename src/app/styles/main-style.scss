@@ -8,15 +8,16 @@
 @import 'navigation.scss';
 
 body {
-  background-color: $primary-black;
-  color: $primary-white;
+  // background-color: $primary-black;
+  background-color: black;
+  color: $primary-font;
   font-family: $font-main;
   height: 100%;
   width: 100%;
-  font-size: 14px;
-  line-height: 150%;
+  font-size: 16px;
+  line-height: 200%;
   @include screen-m {
-    font-size: 16px;
+    font-size: 17px;
   }
   @include screen-l {
     font-size: 18px;
@@ -24,5 +25,5 @@ body {
 }
 
 a {
-  color: $primary-white;
+  color: $primary-font;
 }

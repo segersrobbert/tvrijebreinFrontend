@@ -1,23 +1,36 @@
-<nav class="container-m flex justify-between">
+<nav class="flex justify-between">
 
   <div>
-    <ul>
+    <ul class="flex">
       <li class="">
-        <a routerLink="/" class="padding-m">
-          't Vrije Brein
+        <a routerLink="/"
+           class="padding-top-s padding-right-s padding-bottom-s margin-right-s">
+          home
         </a>
       </li>
-    </ul>
-  </div>
-
-  <div>
-    <ul *ngIf="data" class="flex">
-      <li *ngFor="let city of data.cities" class="">
-        <a  routerLink="/city/{{ city.id }}"
-            class="padding-m">
-          {{ city.name }}
+      <li>
+        <a routerLink="/meetings" class="padding-s margin-right-s">
+          meetings
         </a>
       </li>
+      <li>
+        <a routerLink="/" href="" class="padding-s margin-right-s">
+          steden
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" href="" class="padding-s">
+          contact
+        </a>
+      </li>
+      <!-- <ng-container *ngIf="data">
+        <li *ngFor="let city of data.cities" class="">
+          <a  routerLink="/city/{{ city.id }}"
+              class="padding-s margin-right-s">
+            {{ city.name }}
+          </a>
+        </li>
+      </ng-container> -->
     </ul>
   </div>
 
