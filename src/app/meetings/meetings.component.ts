@@ -11,7 +11,7 @@ import MEETINGS_QUERY from '../apollo/queries/meeting/meetings';
 })
 export class MeetingsComponent implements OnInit, OnDestroy {
 
-  public data: any = {};
+  public data = [];
   public loading = true;
   public pastMeetings: any[];
   public futureMeetings: any[];
@@ -24,7 +24,6 @@ export class MeetingsComponent implements OnInit, OnDestroy {
     this.eventsQuery = this.apollo
       .watchQuery({ query: MEETINGS_QUERY })
       .valueChanges.subscribe((result: any) => {
-        console.log('meetings: ', result);
         this.data = result.data.meetings;
         this.pastMeetings = this.data.filter(meeting => meeting.date > new Date().toISOString());
         this.futureMeetings = this.data.filter(meeting => meeting.date < new Date().toISOString());

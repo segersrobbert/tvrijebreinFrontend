@@ -1,36 +1,38 @@
-<div class="uk-section">
-  <div class="uk-container uk-container-large">
-    <h1>Meetings</h1>
+<div class="container-l">
 
-    <div class="uk-child-width-1-2" uk-grid>
+  <app-nav></app-nav>
+
+  <div class="margin-top-l">
+
+    <div class="" >
 
       <div>
-        <h2>Toekomstige</h2>
+        <h1>Toekomstige meetings</h1>
         <a  routerLink="/meeting/{{ meeting.id }}"
             routerLinkActive="active"
             *ngFor="let meeting of pastMeetings"
-            class="uk-link-reset">
+            class="">
 
-          <div class="uk-card uk-card-muted">
-            <div *ngIf="meeting.image" class="uk-card-media-top">
+          <div class="margin-m">
+            <div *ngIf="meeting.image" class="">
               <img  src="http://localhost:1337{{ meeting.image.url }}"
                     alt=""
                     height="100"/>
             </div>
-            <div class="uk-card-body">
+            <div class="">
               <h3 *ngIf="meeting.name">
                 {{ meeting.name }}
               </h3>
-              <!-- <p class="uk-text-large">
+              <!-- <p class="">
                 {{ meeting.description }}
               </p> -->
-              <p class="uk-text-large">
+              <p class="">
                 {{ meeting.date | date: 'dd/MM/yyyy' }}
               </p>
-              <p class="uk-text-large">
+              <p class="">
                 {{ meeting.speaker }}
               </p>
-              <p class="uk-text-large">
+              <p class="">
                 {{ meeting.location }}
               </p>
 
@@ -40,33 +42,33 @@
         </a>
       </div>
 
-      <div>
-        <h2>Vorige</h2>
+      <div class="margin-top-l">
+        <h1>Vorige meetings</h1>
         <a  routerLink="/meeting/{{ meeting.id }}"
             routerLinkActive="active"
             *ngFor="let meeting of futureMeetings"
-            class="uk-link-reset">
+            class="">
 
-          <div class="uk-card uk-card-muted">
-            <div *ngIf="meeting.image" class="uk-card-media-top">
+          <div class="margin-m">
+            <div *ngIf="meeting.image" class="">
               <img  src="http://localhost:1337{{ meeting.image.url }}"
                     alt=""
                     height="100"/>
             </div>
-            <div class="uk-card-body">
+            <div class="">
               <h3 *ngIf="meeting.name">
                 {{ meeting.name }}
               </h3>
-              <!-- <p class="uk-text-large">
+              <!-- <p class="">
                 {{ meeting.description }}
               </p> -->
-              <p class="uk-text-large">
+              <p class="">
                 Datum: {{ meeting.date | date: 'dd/MM/yyyy hh' }}
               </p>
-              <p class="uk-text-large">
+              <p class="">
                 Spreker: {{ meeting.speaker }}
               </p>
-              <p class="uk-text-large">
+              <p class="">
                 Locatie: {{ meeting.location }}
               </p>
 

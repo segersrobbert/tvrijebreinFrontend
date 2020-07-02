@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apollo } from 'apollo-angular';
 import { Subscription } from 'rxjs';
 
@@ -10,13 +11,17 @@ import CITIES_QUERY from '../apollo/queries/city/cities';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit, OnDestroy {
+
   data: any = {};
   loading = true;
   errors: any;
 
   private citiesQuery: Subscription;
 
-  constructor(private apollo: Apollo) {}
+  constructor(
+    private apollo: Apollo,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.citiesQuery = this.apollo
@@ -32,6 +37,10 @@ export class NavComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.citiesQuery.unsubscribe();
+  }
+
+  onCitySelect(cityName: string): void {
+    this.router.navigate([`location/${cityName}`]);
   }
 
 }

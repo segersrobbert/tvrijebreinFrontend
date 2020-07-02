@@ -18,30 +18,51 @@
 .inline { display: inline; }
 .block { display: block; }
 
-// CONTAINERS
-.container-l { padding: $spacing-l; }
-.container-m { padding: $spacing-m; }
-.container-s { padding: $spacing-s; }
 
 // UTILITIES
 .height-full { height: 100%; }
 .width-full { width: 100%; }
 .width-half { width: 50%; }
+.invisible { visibility: hidden; }
+.bg-white { background-color: $primary-white; }
 
-.invisible {
-  visibility: hidden;
+.ruler {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.nomobile {
+  display: none;
+  @include screen-m { display: inherit; }
+}
+
+
+// CONTAINERS
+.container-s { padding: $spacing-s; }
+.container-m { padding: $spacing-m; }
+.container-l { padding: $spacing-l; }
+.container-xl {
+  padding: $spacing-l;
+  @include screen-m { padding: $spacing-xl; }
+}
+
+
+$sizes: s m l xl;
 
 // MARGINS
 $directions: top right bottom left;
-$sizes: s m l xl;
 @each $size in $sizes {
 
   .margin-#{$size} {
-    @if ($size == 's') { padding: $spacing-s; }
-    @if ($size == 'm') { padding: $spacing-m; }
-    @if ($size == 'l') { padding: $spacing-l; }
-    @if ($size == 'xl') { padding: $spacing-xl; }
+    @if ($size == 's') { margin: $spacing-s; }
+    @if ($size == 'm') { margin: $spacing-m; }
+    @if ($size == 'l') { margin: $spacing-l; }
+    @if ($size == 'xl')  {
+      margin: $spacing-l;
+      @include screen-m { margin: $spacing-xl; }
+    }
   }
 
   @each $direction in $directions {
@@ -60,7 +81,6 @@ $sizes: s m l xl;
 
 // PADDINGS
 $directions: top right bottom left;
-$sizes: s m l;
 @each $size in $sizes {
 
   .padding-#{$size} {
@@ -87,20 +107,4 @@ $sizes: s m l;
     .right-#{$i} { right: $i * 1%; }
     .left-#{$i} { left: $i * 1%; }
   }
-}
-
-.ruler {
-  border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.bg-white {
-  background-color: $primary-white;
-}
-
-.nomobile {
-  display: none;
-  @include screen-m { display: inherit; }
 }

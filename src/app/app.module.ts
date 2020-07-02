@@ -12,14 +12,14 @@ import { ArticleComponent } from './article/article.component';
 import { CategoryComponent } from './category/category.component';
 import { MeetingsComponent } from './meetings/meetings.component';
 import { HomeComponent } from './home/home.component';
-import { CityComponent } from './city/city.component';
+import { LocationComponent } from './location/location.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'meetings', component: MeetingsComponent },
   { path: 'article/:id', component: ArticleComponent },
   { path: 'category/:id', component: CategoryComponent },
-  { path: 'city/:id', component: CityComponent },
+  { path: 'location/:name', component: LocationComponent },
 ];
 
 @NgModule({
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     CategoryComponent,
     MeetingsComponent,
     HomeComponent,
-    CityComponent
+    LocationComponent
   ],
   imports: [
     MarkdownModule.forRoot(),

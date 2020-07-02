@@ -13,24 +13,27 @@
           meetings
         </a>
       </li>
-      <li>
-        <a routerLink="/" href="" class="padding-s margin-right-s">
-          steden
-        </a>
-      </li>
+
+      <ng-container *ngIf="data">
+        <select name="city" class="" (change)="onCitySelect($event.target.value)">
+          <option>locaties</option>
+          <option *ngFor="let city of data.cities"  [value]="city.name">
+            {{city.name}}
+          </option>
+        </select>
+        <!-- <li *ngFor="let city of data.cities" class="">
+          <a  routerLink="/city/{{ city.id }}"
+              class="padding-s margin-right-s">
+            {{ city.name }}
+          </a>
+        </li> -->
+      </ng-container>
+
       <li>
         <a routerLink="/" href="" class="padding-s">
           contact
         </a>
       </li>
-      <!-- <ng-container *ngIf="data">
-        <li *ngFor="let city of data.cities" class="">
-          <a  routerLink="/city/{{ city.id }}"
-              class="padding-s margin-right-s">
-            {{ city.name }}
-          </a>
-        </li>
-      </ng-container> -->
     </ul>
   </div>
 
