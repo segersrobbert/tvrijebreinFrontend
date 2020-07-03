@@ -17,7 +17,7 @@ header {
 }
 
 .map-flanders {
-  background-image: url('../../assets/img/vlaanderen.png');
+  background-image: url('src/assets/img/vlaanderen.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -25,7 +25,7 @@ header {
 }
 
 .map-city {
-  background-image: url('../../assets/img/kaars_inactief.png');
+  background-image: url('src/assets/img/kaars_inactief.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -33,7 +33,7 @@ header {
   height: 75px;
   position: absolute;
   &:hover {
-    background-image: url('../../assets/img/kaars_actief.png');
+    background-image: url('src/assets/img/kaars_actief.png');
   }
 }
 .antwerp {

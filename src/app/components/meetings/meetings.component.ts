@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { Subscription } from 'rxjs';
 
-import MEETINGS_QUERY from '../apollo/queries/meeting/meetings';
+import MEETINGS_QUERY from '../../apollo/queries/meeting/meetings';
 
 @Component({
   selector: 'app-meetings',

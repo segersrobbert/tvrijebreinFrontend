@@ -2,7 +2,7 @@
 
   <div>
     <ul class="flex">
-      <li class="">
+      <li>
         <a routerLink="/"
            class="padding-top-s padding-right-s padding-bottom-s margin-right-s">
           home
@@ -14,19 +14,13 @@
         </a>
       </li>
 
-      <ng-container *ngIf="data">
-        <select name="city" class="" (change)="onCitySelect($event.target.value)">
+      <ng-container *ngIf="cities">
+        <select name="city" (change)="onCitySelect($event.target.value)">
           <option>locaties</option>
-          <option *ngFor="let city of data.cities"  [value]="city.name">
+          <option *ngFor="let city of cities"  [value]="city.id">
             {{city.name}}
           </option>
         </select>
-        <!-- <li *ngFor="let city of data.cities" class="">
-          <a  routerLink="/city/{{ city.id }}"
-              class="padding-s margin-right-s">
-            {{ city.name }}
-          </a>
-        </li> -->
       </ng-container>
 
       <li>

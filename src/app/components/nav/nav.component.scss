@@ -1,0 +1,15 @@
+@import 'src/app/styles/abstracts/variables.scss';
+// @import 'src/app/styles/base/typography.scss';
+
+select {
+  background-color: black;
+  color: $primary-font;
+  // font-family: $font-main;
+  border: none;
+  font-size: 150%;
+  outline: none;
+  min-width: 100px;
+  option {
+    font-size: 66%;
+  }
+}

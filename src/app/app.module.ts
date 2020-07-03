@@ -6,13 +6,14 @@ import { MarkdownModule } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
-import { NavComponent } from './nav/nav.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { ArticleComponent } from './article/article.component';
-import { CategoryComponent } from './category/category.component';
-import { MeetingsComponent } from './meetings/meetings.component';
-import { HomeComponent } from './home/home.component';
-import { LocationComponent } from './location/location.component';
+import { NavComponent } from './components/nav/nav.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { ArticleComponent } from './components/article/article.component';
+import { CategoryComponent } from './components/category/category.component';
+import { MeetingsComponent } from './components/meetings/meetings.component';
+import { HomeComponent } from './components/home/home.component';
+import { LocationComponent } from './components/location/location.component';
+import { DataService } from './services/data.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,7 +41,9 @@ const appRoutes: Routes = [
     GraphQLModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
