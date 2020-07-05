@@ -1,12 +1,13 @@
 <header>
   
   <div class="video-wrapper">
-    <video autoplay muted class="width-full">
+    <video autoPlay muted class="width-full"
+           oncanplay="this.play()" onloadedmetadata="this.muted = true">
       <source src="../../assets/candle-lighting.mp4" type="video/mp4">
     </video>
-    <a href="http://www.videezy.com" class="video-wrapper">
+    <!-- <a href="http://www.videezy.com" class="video-wrapper">
       Videezy
-    </a>
+    </a> -->
   </div>
 
   <div class="height-full flex column justify-center margin-left-xl">
