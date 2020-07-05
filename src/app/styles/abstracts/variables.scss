@@ -1,5 +1,5 @@
 // COLORS
-$primary-font: #FFF3E0;
+$primary-font-color: #FFF3E0;
 $primary: #f09103;
 $primary-light: #FFA41C;
 $secondary: #005DA3;
@@ -9,18 +9,9 @@ $primary-black: #080808;
 $primary-white: #FAFAFA;
 $background-color: #F5F5F5;
 
-$teal: #004D40;
-$cyan: #006064;
-$indigo: #1A237E;
-$deepPurple: #311B92;
-$purple: #6A1B9A;
-$pink: #880E4F;
-$green: #1B5E20;
-$lightgreen: #33691E;
-
 $label: rgb(158, 158, 158);
 $error: #FF3333;
-$warning: #F9A825;
+
 
 // BREAKPOINTS
 $breakpoints: (
@@ -31,6 +22,7 @@ $breakpoints: (
   'huge': (min-width: 1200px),
 );
 
+
 // SPACINGS
 $spacing-s: 10px;
 $spacing-m: 25px;
@@ -40,7 +32,5 @@ $spacing-xl: 100px;
 
 // FONTS
 $font-main: 'Amatic SC', sans-serif;
-$font-sub: 'Neucha', sans-serif;
 
 $text-main: 16px/24px $font-main;
-$text-title-main: 45px/48px $font-sub;

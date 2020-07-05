@@ -32,8 +32,11 @@
               <p class="">
                 {{ meeting.speaker }}
               </p>
-              <p class="">
+              <p class="" *ngIf='meeting.location'>
                 {{ meeting.location }}
+              </p>
+              <p class="" *ngIf='meeting.online'>
+                Online event
               </p>
 
             </div>
@@ -68,8 +71,11 @@
               <p class="">
                 Spreker: {{ meeting.speaker }}
               </p>
-              <p class="">
-                Locatie: {{ meeting.location }}
+              <p class="" *ngIf='meeting.location'>
+                {{ meeting.location }}
+              </p>
+              <p class="" *ngIf='meeting.online'>
+                Dit was een online meeting
               </p>
 
             </div>

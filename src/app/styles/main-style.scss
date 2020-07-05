@@ -10,7 +10,7 @@
 body {
   // background-color: $primary-black;
   background-color: black;
-  color: $primary-font;
+  color: $primary-font-color;
   font-family: $font-main;
   height: 100%;
   width: 100%;
@@ -25,5 +25,5 @@ body {
 }
 
 a {
-  color: $primary-font;
+  color: $primary-font-color;
 }

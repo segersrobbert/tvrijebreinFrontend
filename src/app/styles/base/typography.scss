@@ -17,13 +17,9 @@ h2 {
   @include screen-m { font-size: 2.5rem; }
 }
 h3 {
-  font-family: $font-sub;
   font-size: 1.5rem;
   line-height: 150%;
   @include screen-m { font-size: 2rem; }
-}
-p {
-  font-family: $font-sub;
 }
 a {
   color: white !important;
