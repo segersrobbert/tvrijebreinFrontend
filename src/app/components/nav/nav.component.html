@@ -15,12 +15,14 @@
       </li>
 
       <ng-container *ngIf="cities">
-        <select name="city" (change)="onCitySelect($event.target.value)">
-          <option>locaties</option>
-          <option *ngFor="let city of cities"  [value]="city.id">
-            {{city.name}}
-          </option>
-        </select>
+        <li>
+          <select name="city" (change)="onCitySelect($event.target.value)">
+            <option>locaties</option>
+            <option *ngFor="let city of cities"  [value]="city.id">
+              {{city.name}}
+            </option>
+          </select>
+        </li>
       </ng-container>
 
       <li>
